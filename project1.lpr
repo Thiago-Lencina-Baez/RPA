@@ -1,21 +1,18 @@
 program project1;
-        var num,i,j:integer; letra:char;
+var cantidad: integer; buscado,leido:char;
 begin
-  writeln('ingrese una letra');
-  readln(letra);
-  writeln('ingrese un numero de filas');
-  read(num);
-  for i:=1 to num do
-  begin
-   for j:=1 to num do
-   begin
-   write(' ',letra);
-   letra:= succ(letra);
-
-   end;
-   writeln(' ');
-   readln();
-  end;
-
+ writeln('ingrese el simbolo a buscar'); readln(buscado);
+ writeln('ingrese una secuencia de simbolos terminada en enter:');
+ cantidad:=1;
+ read(leido);
+ while not eoln do
+ begin
+   if leido = buscado then cantidad:=cantidad+1;
+   read(leido);
+ end;
+ read(leido);
+ writeln('Cantidad de veces escrita la letra:', cantidad);
+ readln;
+ readln;
 end.
 
